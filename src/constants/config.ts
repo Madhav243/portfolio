@@ -1,14 +1,13 @@
 export const siteConfig = {
-  name: 'John Doe',
+  name: 'Madhav Verma',
   title: 'Full Stack Developer',
-  email: 'john@example.com',
-  location: 'San Francisco, CA',
-  about: `Passionate full stack developer with expertise in building scalable web applications using modern technologies.`,
+  email: 'madhav.verma108@gmail.com',
+  location: 'Bangalore, India',
+  about: ``,
   
   social: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
-    twitter: 'https://twitter.com'
+    github: 'https://github.com/Madhav243',
+    linkedin: 'https://linkedin.com/in/madhavverma',
   },
 
   skills: [

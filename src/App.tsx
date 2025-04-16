@@ -106,8 +106,7 @@ function App() {
             >
               {[
                 { icon: Github, link: siteConfig.social.github },
-                { icon: Linkedin, link: siteConfig.social.linkedin },
-                { icon: Twitter, link: siteConfig.social.twitter }
+                { icon: Linkedin, link: siteConfig.social.linkedin }
               ].map((social, index) => (
                 <motion.a
                   key={index}
