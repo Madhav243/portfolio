@@ -11,7 +11,7 @@ and deadline-driven environment with willingness to take on additional tasks.`,
     github: 'https://github.com/Madhav243',
     linkedin: 'https://linkedin.com/in/madhavverma',
   },
-  resumeLink : "",
+  resumeLink : "https://drive.google.com/file/d/18WCbnL_2k613QQCRQu8vpA7Uu_IcV1AC/view?usp=sharing",
   skills: [
     {
       category: 'Frontend',
