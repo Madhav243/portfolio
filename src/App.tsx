@@ -28,7 +28,7 @@ function App() {
       {/* Header */}
       <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"
@@ -36,7 +36,16 @@ function App() {
             {siteConfig.name}
           </motion.h1>
           <nav className="flex gap-6">
-            {['About', 'Experience', 'Projects', 'Skills'].map((item, i) => (
+            <motion.a
+              href={siteConfig.resumeLink}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-blue-600 font-medium underline hover:text-blue-800 transition-colors"
+            >
+              Resume
+            </motion.a>
+            {["About", "Experience", "Projects", "Skills"].map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -106,7 +115,7 @@ function App() {
             >
               {[
                 { icon: Github, link: siteConfig.social.github },
-                { icon: Linkedin, link: siteConfig.social.linkedin }
+                { icon: Linkedin, link: siteConfig.social.linkedin },
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -138,7 +147,10 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section
+        id="experience"
+        className="py-20 bg-gradient-to-b from-blue-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInWhenVisible>
             <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-12">
@@ -153,22 +165,32 @@ function App() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900">{exp.position}</h3>
-                    {
-                      exp.link && (
-                        <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                          Product Link
-                        </a>
-                      ) 
-                    }
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {exp.position}
+                    </h3>
+                    {exp.link && (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline"
+                      >
+                        Product Link
+                      </a>
+                    )}
                   </div>
-                  <p className="mt-1 text-blue-600 font-medium">{exp.company} • {exp.duration}</p>
+                  <p className="mt-1 text-blue-600 font-medium">
+                    {exp.company} • {exp.duration}
+                  </p>
                   <ul>
-                  {
-                    exp.description.map((desc, i) => (
-                      <li key={i} className="mt-2 text-gray-600 leading-relaxed">• {desc}</li>
-                    ))
-                  }
+                    {exp.description.map((desc, i) => (
+                      <li
+                        key={i}
+                        className="mt-2 text-gray-600 leading-relaxed"
+                      >
+                        • {desc}
+                      </li>
+                    ))}
                   </ul>
                   {/* <p className="mt-4 text-gray-600 leading-relaxed">{exp.description}</p> */}
                 </motion.div>
@@ -216,7 +238,10 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section
+        id="skills"
+        className="py-20 bg-gradient-to-b from-blue-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInWhenVisible>
             <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-12">
@@ -230,7 +255,9 @@ function App() {
                   className="bg-white rounded-xl p-6 shadow-lg border border-gray-100"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{skillGroup.category}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    {skillGroup.category}
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {skillGroup.items.map((skill, skillIndex) => (
                       <motion.span
@@ -258,7 +285,10 @@ function App() {
             transition={{ delay: 0.5 }}
             className="text-center text-gray-500"
           >
-            <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} {siteConfig.name}. All rights
+              reserved.
+            </p>
           </motion.div>
         </div>
       </footer>
