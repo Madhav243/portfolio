@@ -3,8 +3,11 @@ export const siteConfig = {
   title: 'Full Stack Developer',
   email: 'madhav.verma108@gmail.com',
   location: 'Bangalore, India',
-  about: ``,
-  
+  about: `Software Developer equipped with great coding, debugging and project management abilities. Accomplished project goals consistently with elegant,
+scalable code. In-depth understanding of web technologies with focus on delivering innovative business solutions. Excel in fast-paced, high-energy
+and deadline-driven environment with willingness to take on additional tasks.`,
+  // profileImage : "https://drive.google.com/thumbnail?id=1lkyTwlMm5HN703H7wu5SB9lgigGFCaFN",
+  profileImage : "https://lh3.googleusercontent.com/d/1lkyTwlMm5HN703H7wu5SB9lgigGFCaFN=s900?authuser=0",
   social: {
     github: 'https://github.com/Madhav243',
     linkedin: 'https://linkedin.com/in/madhavverma',
@@ -27,16 +30,30 @@ export const siteConfig = {
 
   experience: [
     {
-      company: 'Tech Company',
-      position: 'Senior Software Engineer',
-      duration: '2020 - Present',
-      description: 'Led development of microservices architecture using Node.js and React'
+      company: 'InCred Financial Services',
+      position: 'Software Engineer',
+      duration: 'Aug 2024 - Present',
+      description: [
+        'Built and launched UBL and SCF LOS portals from scratch using Angular 18, driving faster onboarding and approval workflows—contributing to a ~35% increase in loan disbursal efficiency across SME verticals.',
+        'Maintained and upgraded LAP legacy platform (Angular 5) by integrating new features and business flows, ensuring uninterrupted usage by 300+ internal users across Sales and Credit teams.',
+        'Developed dynamic Angular Reactive Forms and business rule-driven validations using RxJS and PrimeNG, improving form accuracy and reducing Ops-side rework by ~25%.',
+        'Architected reusable components and lazy-loaded modules, improving time-to-market for new LOS features and reducing page load time by ~40% across key journeys.',
+        'Implemented seamless LOS-to-LMS (Loan Management System) data push integrations, helping reduce manual handoffs and boosting LMS conversion pipeline by ~30% in Q4 FY24.',
+        'Enabled role-based workflows and access control for Ops, Sales, and Credit teams, leading to ~20% faster task completion and improved turnaround times on credit evaluations.',
+      ]
     },
     {
-      company: 'Startup Inc',
-      position: 'Full Stack Developer',
-      duration: '2018 - 2020', 
-      description: 'Built and maintained customer-facing web applications'
+      company: 'Paxcom India Pvt Ltd',
+      position: 'Software Engineer',
+      duration: 'Aug 2021 - Aug 2024', 
+      link : 'https://profitnow.ai/login',
+      description: [
+        'Built and scaled a DIY e-commerce platform enabling SMEs (e.g., restaurants, grocery, electronics) to launch fully functional websites with product management, POS, and order tracking in minutes.',
+        'Led the architecture and development of a web & mobile-compatible POS module, the product’s core USP, using Angular 14, RxJS, and Ng Zorro, resulting in a 90%+ adoption rate across businesses.',
+        'Developed business-specific features (e.g., QR-scannable menus, combo/addon systems, real-time order notifications) using RxJS, Angular animations, and custom pipes, boosting user engagement by 30%.',
+        'Applied RxJS patterns, Angular reactive forms, and stateful components to streamline onboarding workflows, reducing user drop-off during registration by ~20% (based on session analytics).',
+        'Used GitLab CI/CD, Agile workflows, and code reviews to streamline development and deployment; mentored juniors on Angular best practices, boosting team velocity by 25%.',
+      ]
     }
   ],
 
@@ -57,9 +74,9 @@ export const siteConfig = {
 
   education: [
     {
-      school: 'University of Technology',
-      degree: 'B.S. Computer Science',
-      duration: '2014 - 2018'
+      school: 'DAV Institute of Engineering and Technology',
+      degree: 'B.Tech Computer Science',
+      duration: '2018 - 2022'
     }
   ]
 };

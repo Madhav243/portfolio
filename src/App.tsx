@@ -63,7 +63,7 @@ function App() {
               className="mb-8"
             >
               <img
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80"
+                src={siteConfig.profileImage}
                 alt="Profile"
                 className="w-32 h-32 rounded-full mx-auto shadow-xl border-4 border-white"
               />
@@ -152,9 +152,25 @@ function App() {
                   className="bg-white rounded-xl p-6 shadow-lg mb-8 border border-gray-100 hover:shadow-xl transition-shadow"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <h3 className="text-xl font-semibold text-gray-900">{exp.position}</h3>
+                  <div className="flex items-center gap-2 mb-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{exp.position}</h3>
+                    {
+                      exp.link && (
+                        <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                          Product Link
+                        </a>
+                      ) 
+                    }
+                  </div>
                   <p className="mt-1 text-blue-600 font-medium">{exp.company} • {exp.duration}</p>
-                  <p className="mt-4 text-gray-600 leading-relaxed">{exp.description}</p>
+                  <ul>
+                  {
+                    exp.description.map((desc, i) => (
+                      <li key={i} className="mt-2 text-gray-600 leading-relaxed">• {desc}</li>
+                    ))
+                  }
+                  </ul>
+                  {/* <p className="mt-4 text-gray-600 leading-relaxed">{exp.description}</p> */}
                 </motion.div>
               </FadeInWhenVisible>
             ))}
