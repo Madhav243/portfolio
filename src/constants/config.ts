@@ -78,7 +78,7 @@ and deadline-driven environment with willingness to take on additional tasks.`,
     {
       title : 'InstaBook - A Social Media App',
       description: 'InstaBook is a social media web application that allows users to create and share posts, follow friends, and engage with content. Built with EJS Template, Node.js, Express, and MongoDB, it features user authentication, real-time notifications, and a responsive design. Users can upload images, comment on posts, and receive updates on their feed. The app is designed for seamless interaction and community building.',
-      link : 'https:.//github.com/Madhav243/Instabook',
+      link : 'https://github.com/Madhav243/Instabook',
       image : 'https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ],
