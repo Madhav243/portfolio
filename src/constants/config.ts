@@ -6,7 +6,6 @@ export const siteConfig = {
   about: `Senior Software Developer equipped with great coding, debugging and project management abilities. Accomplished project goals consistently with elegant,
 scalable code. In-depth understanding of web technologies with focus on delivering innovative business solutions. Excel in fast-paced, high-energy
 and deadline-driven environment with willingness to take on additional tasks.`,
-  // profileImage : "https://drive.google.com/thumbnail?id=1lkyTwlMm5HN703H7wu5SB9lgigGFCaFN",
   profileImage : "https://lh3.googleusercontent.com/d/1lkyTwlMm5HN703H7wu5SB9lgigGFCaFN=s900?authuser=0",
   social: {
     github: 'https://github.com/Madhav243',
