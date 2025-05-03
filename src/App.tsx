@@ -1,6 +1,6 @@
-import React from 'react';
-import { Github, Linkedin, Mail, MapPin, Twitter } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { siteConfig } from './constants/config';
 
@@ -23,11 +23,34 @@ const FadeInWhenVisible = ({ children }: { children: React.ReactNode }) => {
 };
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          {/* Hamburger Menu for Mobile */}
+          <button
+            className="lg:hidden text-gray-600 hover:text-blue-600 focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+              ></path>
+            </svg>
+          </button>
+          <div className='w-full flex items-center justify-center lg:justify-start'>
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -35,31 +58,40 @@ function App() {
           >
             {siteConfig.name}
           </motion.h1>
-          <nav className="flex gap-6">
-            <motion.a
-              href={siteConfig.resumeLink}
-              target='_blank'
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-blue-600 font-medium underline hover:text-blue-800 transition-colors"
-            >
-              Resume
-            </motion.a>
-            {["About", "Experience", "Projects", "Skills"].map((item, i) => (
-              <motion.a
-                key={item}
-                target='_blank'
-                href={`#${item.toLowerCase()}`}
+          </div>
+          
+          {/* Navigation Links */}
+          <AnimatePresence>
+            {(isMenuOpen || (typeof window !== "undefined" && window.innerWidth >= 1024)) && (
+              <motion.nav
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="absolute lg:static top-16 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none lg:flex lg:gap-6"
               >
-                {item}
-              </motion.a>
-            ))}
-          </nav>
+                <motion.a
+                  href={siteConfig.resumeLink}
+                  target="_blank"
+                  className="block lg:inline-block px-4 py-2 lg:px-0 text-blue-600 font-medium underline hover:text-blue-800 transition-colors"
+                >
+                  Resume
+                </motion.a>
+                {["About", "Experience", "Projects", "Skills"].map((item, i) => (
+                  <motion.a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="block lg:inline-block px-4 py-2 lg:px-0 text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </motion.nav>
+            )}
+          </AnimatePresence>
         </div>
       </header>
 
@@ -98,7 +130,7 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mt-5 flex justify-center gap-4 text-gray-500"
+              className="mt-5 flex justify-center gap-4 text-gray-500 flex-wrap"
             >
               <div className="flex items-center gap-1 bg-white px-4 py-2 rounded-full shadow-md">
                 <MapPin size={18} className="text-blue-500" />
